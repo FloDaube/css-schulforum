@@ -6,7 +6,7 @@ namespace Schule\Domain\Model;
 
 class DBConnect
 {
-    public function Connection()
+    public function get_Connection()
     {
         $hostname = "server6.febas.net";
         $user= "schule-css";
