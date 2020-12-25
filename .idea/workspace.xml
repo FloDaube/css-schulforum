@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="832a4692-99ab-4152-8892-6cbf364d19bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Schule/Domain/Model/models.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Schule/Domain/Service/DBService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schule/Domain/Model/DBConnect.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/Domain/Model/DBConnect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schule/Domain/Model/post.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schule/Domain/Service/DBService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/Domain/Service/DBService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +57,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608205043521</updated>
-      <workItem from="1608205046511" duration="2062000" />
+      <workItem from="1608205046511" duration="3972000" />
+      <workItem from="1608214445784" duration="6427000" />
+      <workItem from="1608907310278" duration="1592000" />
     </task>
     <servers />
   </component>
@@ -76,5 +76,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
