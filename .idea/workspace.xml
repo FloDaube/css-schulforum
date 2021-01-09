@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="832a4692-99ab-4152-8892-6cbf364d19bd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schule/loginform/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schule/loginform/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schule/loginform/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schule/loginform/passwordreset.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schule/loginform/register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schule/loginform/setpassword.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schule/Domain/Service/DBService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/Domain/Service/DBService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Schule/Domain/Service/DBService.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -60,6 +66,8 @@
       <workItem from="1608205046511" duration="3972000" />
       <workItem from="1608214445784" duration="6427000" />
       <workItem from="1608907310278" duration="1592000" />
+      <workItem from="1610193199122" duration="40000" />
+      <workItem from="1610193288341" duration="1521000" />
     </task>
     <servers />
   </component>
@@ -77,5 +85,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1610195656454">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610195656454" />
   </component>
 </project>
