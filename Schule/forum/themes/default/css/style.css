@@ -1,0 +1,139 @@
+.headerfixedBar{
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+.headerlogoText{
+    margin-left: 20px;
+    color: #70C3FF;
+    font-size: 1.4em;
+    line-height: 1.2em;
+}
+.headerlogoText:hover{
+    font-size: 1.5em;
+    color: #70C3FF;
+}
+.headerlogoImage{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.pullLeft{
+    float: left;
+    display: inline-block;
+}
+.pullRigth{
+    float: right;
+    display: inline-block;
+}
+.vMiddle{
+    display: inline-block;
+    position: relative;
+    vertical-align: center;
+}
+
+.themeButton{
+    background-color: white;
+    color: #70C3FF;
+    font-size: 1.3em;
+    margin-right: 20px;
+    margin-top: 7px;
+}
+.themeButton:hover{
+    border-width: thin;
+    border-color: #70C3FF;
+    font-size: 1.4em;
+    background-color: #70C3FF;
+    color: white;
+}
+
+.categoryModule{
+    background-color: white;
+    color: black;
+    margin-top: 10px;
+}
+
+.forumBackground{
+    background-color: white;
+}
+
+.forumModule{
+    background-color: white;
+    color: black;
+}
+.forumMargin{
+    margin-bottom: 10px;
+}
+.forumPad{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.forumTable{
+    width: 100%;
+    height: auto;
+    color: #808080;
+}
+.forumTable td{
+    padding: 5px;
+}
+.forumTable tr{
+    border: 2px solid #f2f2f2;
+}
+body,html{
+    background-color: #f2f2f2;
+}
+body{
+    margin-top: 70px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 70px;
+}
+.paginationBar{
+    padding: 15px;
+}
+.paginationArrow{
+    color: #a9a9a9;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.columepad{
+    margin: 5px;
+}
+
+
+a{
+    color: #70C3FF;
+    text-decoration: none;
+}
+a:hover{
+    color: #70C3FF;
+    font-weight: 500;
+    text-decoration: none;
+}
+.forumTable a:hover{
+    font-weight: normal;
+}
+
+h1{
+    font-size: 1.7em;
+    color: #70C3FF;
+}
+h2{
+    font-size: 1.5em;
+    color: #70C3FF;
+}
+h3{
+    font-size: 1.3em;
+    color: #70C3FF;
+}
+h4{
+    font-size: 1.1em;
+    color: #70C3FF;
+}

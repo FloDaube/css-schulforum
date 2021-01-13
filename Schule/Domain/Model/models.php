@@ -16,7 +16,9 @@ class post
 {
     var $id;
     var $user_id;
+    var $category_id; //Fehlt in db und Service
     var $text;
+    var $title; //Fehlt in db und Service
     var $timestamp;
 }
 
@@ -27,4 +29,10 @@ class reply
     var $post_id;
     var $text;
     var $timestamp;
+}
+
+class category
+{
+    var $id;
+    var $name;
 }
