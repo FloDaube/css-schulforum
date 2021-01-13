@@ -1,13 +1,11 @@
 <?php
 namespace bll\service;
 
-include '../Model/DBConnect.php';
-include '../Model/models.php';
+include '../../Domain/Model/DBConnect.php';
+include '../../Domain/Model/models.php';
 
-use Schule\Domain\Model\DBConnect;
-use Schule\Domain\Model\post;
-use Schule\Domain\Model\user;
-use Schule\Domain\Model\reply;
+
+
 
 class DBService
 {
@@ -45,7 +43,8 @@ class DBService
             }
         }
     }
-    public function getPosts()
+
+    public function getUsers()
     {
         $dbconn = new DBConnect();
         $conn = $dbconn->get_Connection();
@@ -55,7 +54,7 @@ class DBService
         else
         {
             //Erstelle SQL Query für User mit Namen der Übergeben wurde.
-            $query = "SELECT * FROM `css-schulforum`.posts;";
+            $query = "SELECT id,name FROM `css-schulforum`.users;";
 
             //Führe Query aus und überprüfe ob ein fehler aufgetretten ist.
             $result = mysqli_query($conn, $query);
@@ -64,7 +63,44 @@ class DBService
             }
             else
             {
-                //Lade Daten in user Objekt
+                //Lade Daten in post Objekt
+                $datalist = $result->fetch_all();
+                $users = array();
+                foreach ($datalist as $dataset)
+                {
+                    $user= new user();
+
+                    $user->id = $dataset[0];
+                    $user->name = $dataset[1];
+
+                    array_push($users,$user);
+                }
+
+                return($users);
+            }
+        }
+    }
+
+    public function getPosts($cat_id)
+    {
+        $dbconn = new DBConnect();
+        $conn = $dbconn->get_Connection();
+        if (!$conn) {
+            echo 'Verbindung schlug fehl: ' . mysqli_errno();
+        }
+        else
+        {
+            //Erstelle SQL Query für User mit Namen der Übergeben wurde.
+            $query = "SELECT * FROM `css-schulforum`.posts_view Where cat_id = " . $cat_id . ";";
+
+            //Führe Query aus und überprüfe ob ein fehler aufgetretten ist.
+            $result = mysqli_query($conn, $query);
+            if (!$result) {
+                echo trigger_error('Invalid query: ' . $conn->error);
+            }
+            else
+            {
+                //Lade Daten in post Objekt
                 $datalist = $result->fetch_all();
                 $posts = array();
                 foreach ($datalist as $dataset)
@@ -73,8 +109,11 @@ class DBService
 
                     $post->id = $dataset[0];
                     $post->user_id = $dataset[1];
-                    $post->text = $dataset[2];
-                    $post->timestamp = $dataset[3];
+                    $post->category_id = $dataset[2];
+                    $post->title = $dataset[3];
+                    $post->text = $dataset[4];
+                    $post->timestamp = $dataset[5];
+                    $post->countreplys = $dataset[6];
 
                     array_push($posts,$post);
                 }
@@ -83,7 +122,8 @@ class DBService
             }
         }
     }
-    public function getReplys()
+
+    public function getPostById($id)
     {
         $dbconn = new DBConnect();
         $conn = $dbconn->get_Connection();
@@ -93,7 +133,7 @@ class DBService
         else
         {
             //Erstelle SQL Query für User mit Namen der Übergeben wurde.
-            $query = "SELECT * FROM `css-schulforum`.replys;";
+            $query = "SELECT * FROM `css-schulforum`.posts Where id = " . $id . ";";
 
             //Führe Query aus und überprüfe ob ein fehler aufgetretten ist.
             $result = mysqli_query($conn, $query);
@@ -102,7 +142,42 @@ class DBService
             }
             else
             {
-                //Lade Daten in user Objekt
+                //Lade Daten in post Objekt
+                $dataset = $result->fetch_all();
+                $post= new post();
+
+                $post->id = $dataset[0];
+                $post->user_id = $dataset[1];
+                $post->category_id = $dataset[2];
+                $post->title = $dataset[3];
+                $post->text = $dataset[4];
+                $post->timestamp = $dataset[5];
+
+                return($post);
+            }
+        }
+    }
+
+    public function getReplys($post_id)
+    {
+        $dbconn = new DBConnect();
+        $conn = $dbconn->get_Connection();
+        if (!$conn) {
+            echo 'Verbindung schlug fehl: ' . mysqli_errno();
+        }
+        else
+        {
+            //Erstelle SQL Query für User mit Namen der Übergeben wurde.
+            $query = "SELECT * FROM `css-schulforum`.replys Where post_id = " . $post_id . ";";
+
+            //Führe Query aus und überprüfe ob ein fehler aufgetretten ist.
+            $result = mysqli_query($conn, $query);
+            if (!$result) {
+                echo trigger_error('Invalid query: ' . $conn->error);
+            }
+            else
+            {
+                //Lade Daten in reply Objekt
                 $datalist = $result->fetch_all();
                 $replys = array();
                 foreach ($datalist as $dataset)
@@ -122,13 +197,54 @@ class DBService
             }
         }
     }
-}
-//Test von getUserByName Methode
 
-$test = new DBService();
-$user = $test->getUserByName('fd');
-$posts = $test->getPosts();
-$replys = $test->getReplys();
-print_r($user);
-print_r($posts);
-print_r($replys);
+    public function getCategorys()
+    {
+        $dbconn = new DBConnect();
+        $conn = $dbconn->get_Connection();
+        if (!$conn) {
+            echo 'Verbindung schlug fehl: ' . mysqli_errno();
+        }
+        else
+        {
+            //Erstelle SQL Query für User mit Namen der Übergeben wurde.
+            $query = "SELECT * FROM `css-schulforum`.category_view;";
+
+            //Führe Query aus und überprüfe ob ein fehler aufgetretten ist.
+            $result = mysqli_query($conn, $query);
+            if (!$result) {
+                echo trigger_error('Invalid query: ' . $conn->error);
+            }
+            else
+            {
+                //Lade Daten in category Objekt
+                $datalist = $result->fetch_all();
+                $cats = array();
+                foreach ($datalist as $dataset)
+                {
+                    $cat= new category();
+
+                    $cat->id = $dataset[0];
+                    $cat->title = $dataset[1];
+                    $cat->count = $dataset[2];
+
+
+                    array_push($cats,$cat);
+                }
+
+                return($cats);
+            }
+        }
+    }
+}
+//Test Methoden
+
+//$test = new DBService();
+//$user = $test->getUserByName('fd');
+//$posts = $test->getPosts();
+//$replys = $test->getReplys();
+//$cats = $test->getCategorys();
+//print_r($user);
+//print_r($posts);
+//print_r($replys);
+//print_r($cats);

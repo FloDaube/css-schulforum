@@ -16,10 +16,11 @@ class post
 {
     var $id;
     var $user_id;
-    var $category_id; //Fehlt in db und Service
+    var $category_id;
     var $text;
-    var $title; //Fehlt in db und Service
+    var $title;
     var $timestamp;
+    var $countreplys;
 }
 
 class reply
@@ -34,5 +35,6 @@ class reply
 class category
 {
     var $id;
-    var $name;
+    var $title;
+    var $count;
 }

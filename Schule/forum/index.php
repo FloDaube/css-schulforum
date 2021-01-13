@@ -30,19 +30,31 @@
                 </div>
             </div>
 
-            <div  onclick="showDisscussions('category_Name1')" class="row categoryModule">
-                <div class="col-lg-12 columepad">
-                    <div class="pullLeft">
-                        <h1>Category Name</h1>
-                    </div>
-                    <div class="pullRigth" style="margin-top: 10px">
-                        1234Discusions
+            <?php
+            include '../Domain/Service/DBService.php';
+
+            $Service = new \bll\service\DBService();
+
+            $cats = $Service->getCategorys();
+            $users = $Service->getUsers();
+            foreach ($cats as $cat){
+                $posts = $Service->getPosts($cat->id);
+                ?>
+                <div  onclick="showDisscussions('<?php echo "category_" . $cat->id; ?>')" class="row categoryModule">
+                    <div class="col-lg-12 columepad">
+                        <div class="pullLeft">
+                            <h1><?php echo $cat->title?></h1>
+                        </div>
+                        <div class="pullRigth" style="margin-top: 10px">
+                            <?php
+                            echo $cat->count . " Diskusionen";
+                            ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="category_Name1" class="row forumPad" style="display: block">
-                <table class="forumTable">
-                    <thead>
+                <div id="<?php echo "category_" . $cat->id; ?>" class="row forumPad" style="display: block">
+                    <table class="forumTable">
+                        <thead>
                         <th>
                             Thema
                         </th>
@@ -52,101 +64,36 @@
                         <th class="pullRigth">
                             Antworten
                         </th>
-                    </thead>
-                    <tr class="forumModule">
-                        <td>
-                            <a href="#">Thema</a>
-                        </td>
-                        <td>
-                            <a href="#">Autor</a>
-                        </td>
-                        <td class="pullRigth">
-                            TEst
-                        </td>
-                    </tr>
-                    <tr class="forumModule">
-                        <td>
-                            <a href="#">Thema</a>
-                        </td>
-                        <td>
-                            <a href="#">Autor</a>
-                        </td>
-                        <td class="pullRigth">
-                            TEst
-                        </td>
-                    </tr>
-                    <tr class="forumModule">
-                        <td>
-                            <a href="#">Thema</a>
-                        </td>
-                        <td>
-                            <a href="#">Autor</a>
-                        </td>
-                        <td class="pullRigth">
-                            TEst
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <div  onclick="showDisscussions('category_Name2')" class="row categoryModule">
-                <div class="col-lg-12 columepad">
-                    <div class="pullLeft">
-                        <h1>Category Name</h1>
-                    </div>
-                    <div class="pullRigth" style="margin-top: 10px">
-                        1234Discusions
-                    </div>
+                        </thead>
+                        <?php
+                        foreach ($posts as $post){
+                        ?>
+                            <tr class="forumModule">
+                                <td>
+                                    <a href="post.php?post=<?php echo $post->id; ?>"><?php echo $post->title; ?></a>
+                                </td>
+                                <td>
+                                    <a href="#"><?php
+                                        foreach ($users as $user){
+                                            if($user->id == $post->id){
+                                                echo $user->name;
+                                                break;
+                                            }
+                                        }
+                                        ?></a>
+                                </td>
+                                <td class="pullRigth">
+                                    <?php echo $post->countreplys; ?>
+                                </td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                    </table>
                 </div>
-            </div>
-            <div id="category_Name2" class="row forumPad" style="display: block">
-                <table class="forumTable">
-                    <thead>
-                    <th>
-                        Thema
-                    </th>
-                    <th>
-                        Autor
-                    </th>
-                    <th class="pullRigth">
-                        Antworten
-                    </th>
-                    </thead>
-                    <tr class="forumModule">
-                        <td>
-                            <a href="#">Thema</a>
-                        </td>
-                        <td>
-                            <a href="#">Autor</a>
-                        </td>
-                        <td class="pullRigth">
-                            TEst
-                        </td>
-                    </tr>
-                    <tr class="forumModule">
-                        <td>
-                            <a href="#">Thema</a>
-                        </td>
-                        <td>
-                            <a href="#">Autor</a>
-                        </td>
-                        <td class="pullRigth">
-                            TEst
-                        </td>
-                    </tr>
-                    <tr class="forumModule">
-                        <td>
-                            <a href="#">Thema</a>
-                        </td>
-                        <td>
-                            <a href="#">Autor</a>
-                        </td>
-                        <td class="pullRigth">
-                            TEst
-                        </td>
-                    </tr>
-                </table>
-            </div>
+            <?php
+            }
+            ?>
         </div>
     </body>
 
