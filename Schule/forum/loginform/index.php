@@ -12,7 +12,7 @@ if(isset($_POST["submit"])){
     require("../Domain/Model/DBConnect.php");
     $con =new \Schule\Domain\Model\DBConnect();
     $con = \Schule\Domain\Model\DBConnect::get_Connection();
-    $stmt = $con->prepare("SELECT * FROM users WHERE USERNAME = :user"); //Username überprüfen
+    $stmt = $con->prepare("SELECT * FROM users WHERE name = :user"); //Username überprüfen
     $stmt->bindParam(":user", $_POST["username"]);
     $stmt->execute();
     $count = $stmt->rowCount();
