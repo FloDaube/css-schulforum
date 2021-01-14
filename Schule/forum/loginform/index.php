@@ -19,9 +19,9 @@ if(isset($_POST["submit"])){
     if($count == 1){
         //Username ist frei
         $row = $stmt->fetch();
-        if(password_verify($_POST["pw"], $row["PASSWORD"])){
+        if(password_verify($_POST["pw"], $row["password"])){
             session_start();
-            $_SESSION["username"] = $row["USERNAME"];
+            $_SESSION["username"] = $row["name"];
             header("Location: geheim.php");
         } else {
             echo "Der Login ist fehlgeschlagen";
