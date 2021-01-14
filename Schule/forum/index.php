@@ -39,7 +39,6 @@
             $Service = new \bll\service\DBService();
 
             $cats = $Service->getCategorys();
-            $users = $Service->getUsers();
             foreach ($cats as $cat){
                 $posts = $Service->getPosts($cat->id);
                 ?>
@@ -77,12 +76,8 @@
                                 </td>
                                 <td>
                                     <a href="#"><?php
-                                        foreach ($users as $user){
-                                            if($user->id == $post->id){
-                                                echo $user->name;
-                                                break;
-                                            }
-                                        }
+                                        $user = $Service->getUserById($post->user_id);
+                                        echo $user->name;
                                         ?></a>
                                 </td>
                                 <td class="pullRigth">

@@ -48,6 +48,40 @@ class DBService
         }
     }
 
+    public function getUserById($id)
+    {
+        $dbconn = new DBConnect();
+        $conn = $dbconn->get_Connection();
+        if (!$conn) {
+            echo 'Verbindung schlug fehl: ' . mysqli_errno();
+        }
+        else
+        {
+            //Erstelle SQL Query für User mit Namen der Übergeben wurde.
+            $query = "SELECT * FROM `css-schulforum`.users WHERE id = '" . $id . "'";
+
+            //Führe Query aus und überprüfe ob ein fehler aufgetretten ist.
+            $result = mysqli_query($conn, $query);
+            if (!$result) {
+                echo trigger_error('Invalid query: ' . $conn->error);
+            }
+            else
+            {
+                //Lade Daten in user Objekt
+                $dataset = $result->fetch_assoc();
+                $user = new user();
+
+                $user->id = $dataset['id'];
+                $user->name = $dataset['name'];
+                $user->password = $dataset['password'];
+                $user->email = $dataset['email'];
+                $user->aktiv = $dataset['aktiv'];
+                $user->timestamp = $dataset['timestamp'];
+                return($user);
+            }
+        }
+    }
+
     public function getUsers()
     {
         $dbconn = new DBConnect();
