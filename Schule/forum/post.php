@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <?php
+    error_reporting(E_ERROR | E_PARSE);
+    include '../Domain/Model/DBConnect.php';
+    include '../Domain/Model/models.php';
     include '../Domain/Service/DBService.php';
 
     $Service = new \bll\service\DBService();

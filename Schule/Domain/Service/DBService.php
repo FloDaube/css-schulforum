@@ -1,10 +1,14 @@
 <?php
 namespace bll\service;
 
-include '../../Domain/Model/DBConnect.php';
-include '../../Domain/Model/models.php';
+include '../Model/DBConnect.php';
+include '../Model/models.php';
 
-
+use Schule\Domain\Model\DBConnect;
+use Schule\Domain\Model\post;
+use Schule\Domain\Model\category;
+use Schule\Domain\Model\reply;
+use Schule\Domain\Model\user;
 
 
 class DBService
@@ -122,7 +126,6 @@ class DBService
             }
         }
     }
-
     public function getPostById($id)
     {
         $dbconn = new DBConnect();
@@ -143,15 +146,15 @@ class DBService
             else
             {
                 //Lade Daten in post Objekt
-                $dataset = $result->fetch_all();
+                $dataset = $result->fetch_assoc();
                 $post= new post();
 
-                $post->id = $dataset[0];
-                $post->user_id = $dataset[1];
-                $post->category_id = $dataset[2];
-                $post->title = $dataset[3];
-                $post->text = $dataset[4];
-                $post->timestamp = $dataset[5];
+                $post->id = $dataset['id'];
+                $post->user_id = $dataset['user_id'];
+                $post->category_id = $dataset['cat_id'];
+                $post->title = $dataset['title'];
+                $post->text = $dataset['text'];
+                $post->timestamp = $dataset['timestamp'];
 
                 return($post);
             }
@@ -241,8 +244,8 @@ class DBService
 
 //$test = new DBService();
 //$user = $test->getUserByName('fd');
-//$posts = $test->getPosts();
-//$replys = $test->getReplys();
+//$posts = $test->getPosts(1);
+//$replys = $test->getReplys(1);
 //$cats = $test->getCategorys();
 //print_r($user);
 //print_r($posts);

@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="832a4692-99ab-4152-8892-6cbf364d19bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Schule/forum/post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schule/Domain/Model/models.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/Domain/Model/models.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Schule/Domain/Service/DBService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/Domain/Service/DBService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schule/forum/category.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Schule/forum/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/forum/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schule/forum/profile.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schule/forum/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/forum/post.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +69,8 @@
       <workItem from="1608907310278" duration="1592000" />
       <workItem from="1610193199122" duration="40000" />
       <workItem from="1610193288341" duration="1521000" />
-      <workItem from="1610201372770" duration="33689000" />
+      <workItem from="1610201372770" duration="33748000" />
+      <workItem from="1610607998290" duration="3893000" />
     </task>
     <servers />
   </component>
@@ -90,16 +88,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Schule/Domain/Service/DBService.php</url>
-          <line>9</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

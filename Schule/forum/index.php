@@ -31,6 +31,9 @@
             </div>
 
             <?php
+            error_reporting(E_ERROR | E_PARSE);
+            include '../Domain/Model/DBConnect.php';
+            include '../Domain/Model/models.php';
             include '../Domain/Service/DBService.php';
 
             $Service = new \bll\service\DBService();
