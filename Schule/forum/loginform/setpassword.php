@@ -9,6 +9,8 @@
 <?php
 if(isset($_GET["token"])){
     require("../Domain/Model/DBConnect.php");
+$con =new \Schule\Domain\Model\DBConnect();
+$con = $con->get_Connection();
     $stmt = $con->prepare("SELECT * FROM users WHERE TOKEN = :token"); //Username überprüfen
     $stmt->bindParam(":token", $_GET["token"]);
     $stmt->execute();

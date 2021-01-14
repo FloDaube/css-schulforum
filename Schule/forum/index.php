@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="pullRigth">
-                    <a class="btn btn-primary themeButton" href="index.php?logout" title="CSS-Schul-Forum">Login</a>
+                    <a class="btn btn-primary themeButton" href="loginform/index.php" title="CSS-Schul-Forum">Login</a>
                 </div>
             </div>
 
