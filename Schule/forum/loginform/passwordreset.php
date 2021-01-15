@@ -11,6 +11,8 @@
 <?php
 if (isset($_POST["submit"])) {
     require("../Domain/Model/DBConnect.php");
+    $con =new \Schule\Domain\Model\DBConnect();
+    $con = \Schule\Domain\Model\DBConnect::get_Connection();
     $stmt = $con->prepare("SELECT * FROM users WHERE EMAIL = :email"); //Username überprüfen
     $stmt->bindParam(":email", $_POST["email"]);
     $stmt->execute();

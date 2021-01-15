@@ -32,9 +32,8 @@
     display: inline-block;
 }
 .vMiddle{
+    float: right;
     display: inline-block;
-    position: relative;
-    vertical-align: center;
 }
 
 .themeButton{
@@ -51,7 +50,20 @@
     background-color: #70C3FF;
     color: white;
 }
-
+.themeButtonMin{
+    background-color: white;
+    color: #70C3FF;
+    font-size: 1.0em;
+    margin-right: 20px;
+    margin-top: 7px;
+}
+.themeButtonMin:hover{
+    border-width: thin;
+    border-color: #70C3FF;
+    font-weight: 500;
+    background-color: #70C3FF;
+    color: white;
+}
 .categoryModule{
     background-color: white;
     color: black;
@@ -106,7 +118,6 @@ body{
 .columepad{
     margin: 5px;
 }
-
 
 a{
     color: #70C3FF;

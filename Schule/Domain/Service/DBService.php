@@ -224,8 +224,8 @@ class DBService
                     $reply->id = $dataset[0];
                     $reply->user_id = $dataset[1];
                     $reply->post_id = $dataset[2];
-                    $reply->text = $dataset[2];
-                    $reply->timestamp = $dataset[3];
+                    $reply->text = $dataset[3];
+                    $reply->timestamp = $dataset[4];
 
                     array_push($replys,$reply);
                 }
@@ -273,7 +273,38 @@ class DBService
             }
         }
     }
+
+    public function getCategoryById($id)
+    {
+        $dbconn = new DBConnect();
+        $conn = $dbconn->get_Connection();
+        if (!$conn) {
+            echo 'Verbindung schlug fehl: ' . mysqli_errno();
+        }
+        else
+        {
+            //Erstelle SQL Query für User mit Namen der Übergeben wurde.
+            $query = "SELECT * FROM `css-schulforum`.category WHERE id = '" . $id . "'";
+
+            //Führe Query aus und überprüfe ob ein fehler aufgetretten ist.
+            $result = mysqli_query($conn, $query);
+            if (!$result) {
+                echo trigger_error('Invalid query: ' . $conn->error);
+            }
+            else
+            {
+                //Lade Daten in user Objekt
+                $dataset = $result->fetch_assoc();
+                $cat = new category();
+
+                $cat->id = $dataset['id'];
+                $cat->title = $dataset['title'];
+                return($cat);
+            }
+        }
+    }
 }
+
 //Test Methoden
 
 //$test = new DBService();

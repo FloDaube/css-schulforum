@@ -1,22 +1,42 @@
 <html>
     <head>
         <link type="text/css" href="themes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link type="text/css" href="themes/default/css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+        <link type="text/css" href="themes/default/css/style.css" rel="stylesheet">
         <title>CSS-Schul-Forum</title>
     </head>
+<?php
+error_reporting(E_ERROR | E_PARSE);
+include '../Domain/Model/DBConnect.php';
+include '../Domain/Model/models.php';
+include '../Domain/Service/DBService.php';
 
+$Service = new \bll\service\DBService();
+?>
     <div class="headerfixedBar">
         <div class="row">
             <div class="col-lg-12">
                 <div class="pullLeft">
                     <a class="headerlogoText" href="index.php" title="CSS-Schul-Forum"><img class="headerlogoImage" src="themes/default/images/150x150_Logo.png"> CSS-Schul-Forum</a>
                 </div>
-
                 <div class="pullRigth">
-                    <a class="btn btn-primary themeButton" href="loginform/index.php" title="CSS-Schul-Forum">Login</a>
+                    <?php
+                    session_start();
+                    if(isset($_SESSION['id']) == null){
+                        ?>
+                        <a class="btn btn-primary themeButton" href="loginform/index.php" title="CSS-Schul-Forum">Login</a>
+                        <?php
+                    }else{
+                        ?>
+                            <a class="btn btn-primary themeButton" href="loginform/logout.php" title="CSS-Schul-Forum"><?php $user = $Service->getUserById($_SESSION['id']); echo $user->name;?> Logout</a>
+                        <?php
+                    }
+                    ?>
                 </div>
+
             </div>
+
 
         </div>
 
@@ -31,12 +51,7 @@
             </div>
 
             <?php
-            error_reporting(E_ERROR | E_PARSE);
-            include '../Domain/Model/DBConnect.php';
-            include '../Domain/Model/models.php';
-            include '../Domain/Service/DBService.php';
 
-            $Service = new \bll\service\DBService();
 
             $cats = $Service->getCategorys();
             foreach ($cats as $cat){
@@ -54,7 +69,17 @@
                         </div>
                     </div>
                 </div>
-                <div id="<?php echo "category_" . $cat->id; ?>" class="row forumPad" style="display: block">
+                <div id="<?php echo "category_" . $cat->id; ?>" class="row forumPad" style="display: none">
+                    <?php
+                    if(isset($_SESSION['id']) != null){
+                    ?>
+                        <a class="btn btn-primary themeButtonMin" href="newPost.php?cat_id=<?php echo $cat->id; ?>"><i class="fa fa-plus paginationArrow"></i>New Post</a>
+                    <?php
+                    }
+                    ?>
+
+
+
                     <table class="forumTable">
                         <thead>
                         <th>

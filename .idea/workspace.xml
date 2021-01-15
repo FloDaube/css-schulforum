@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="832a4692-99ab-4152-8892-6cbf364d19bd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Schule/forum/insertPost.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schule/forum/insertReply.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schule/forum/newPost.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Schule/Domain/Service/DBService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/Domain/Service/DBService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Schule/forum/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/forum/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schule/forum/loginform/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/forum/loginform/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schule/forum/loginform/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/forum/loginform/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Schule/forum/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/forum/post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schule/forum/themes/default/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/forum/themes/default/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schule/loginform/passwordreset.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/forum/loginform/passwordreset.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schule/loginform/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schule/forum/loginform/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +51,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\_Entwicklung\Quellcode\css-schulforum\Schule\forum\loginform" />
       <recent name="D:\_Entwicklung\Quellcode\css-schulforum\Schule\forum" />
+      <recent name="D:\_Entwicklung\Quellcode\css-schulforum\Schule\forum\themes" />
       <recent name="D:\_Entwicklung\Quellcode\css-schulforum\Schule\Domain\Service" />
     </key>
   </component>
@@ -70,7 +81,7 @@
       <workItem from="1610193199122" duration="40000" />
       <workItem from="1610193288341" duration="1521000" />
       <workItem from="1610201372770" duration="33748000" />
-      <workItem from="1610607998290" duration="7631000" />
+      <workItem from="1610607998290" duration="44113000" />
     </task>
     <servers />
   </component>
