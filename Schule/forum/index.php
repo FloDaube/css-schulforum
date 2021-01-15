@@ -51,15 +51,15 @@ $Service = new \bll\service\DBService();
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 paginationBar forumModule forumMargin">
+                <div class="col-lg-9 paginationBar forumModule forumMargin">
                     <a href="index.php" style="font-size: 1.5em">Home</a> <!-- <i class="fa fa-chevron-right paginationArrow"></i> <a href="#">Kategorie</a> <i class="fa fa-chevron-right paginationArrow "></i> <a href="#">Diskusionen</a> -->
                 </div>
-                <div class="col-lg-2 paginationBar forumModule forumMargin">
+                <div class="col-lg-3 paginationBar forumModule forumMargin">
                     <?php
                     if(isset($_SESSION['id']) != null){
                         ?>
                         <!--<button type="button" class="btn btn-primary themeButtonMin"><i class="fa fa-plus paginationArrow" data-toggle="modal" data-target="#myModal"></i>New Kategorie</button>-->
-                        <button type="button" class="btn btn-info btn-lg themeButtonMin" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus paginationArrow" data-toggle="modal" data-target="#myModal"></i>New Kategorie</button>
+                        <button type="button" class="btn btn-info btn-lg themeButtonMin" style="margin-left: 80px" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus paginationArrow" data-toggle="modal" data-target="#myModal"></i>New Kategorie</button>
                         <?php
                     }
                     ?>
