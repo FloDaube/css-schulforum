@@ -56,6 +56,8 @@
     font-size: 1.0em;
     margin-right: 20px;
     margin-top: 7px;
+    border-width: thin;
+    border-color: #70C3FF;
 }
 .themeButtonMin:hover{
     border-width: thin;

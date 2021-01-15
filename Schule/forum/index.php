@@ -1,5 +1,11 @@
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link type="text/css" href="themes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
@@ -45,10 +51,23 @@ $Service = new \bll\service\DBService();
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 paginationBar forumModule forumMargin">
-                    <a href="index.php">Home</a> <!-- <i class="fa fa-chevron-right paginationArrow"></i> <a href="#">Kategorie</a> <i class="fa fa-chevron-right paginationArrow "></i> <a href="#">Diskusionen</a> -->
+                <div class="col-lg-10 paginationBar forumModule forumMargin">
+                    <a href="index.php" style="font-size: 1.5em">Home</a> <!-- <i class="fa fa-chevron-right paginationArrow"></i> <a href="#">Kategorie</a> <i class="fa fa-chevron-right paginationArrow "></i> <a href="#">Diskusionen</a> -->
+                </div>
+                <div class="col-lg-2 paginationBar forumModule forumMargin">
+                    <?php
+                    if(isset($_SESSION['id']) != null){
+                        ?>
+                        <!--<button type="button" class="btn btn-primary themeButtonMin"><i class="fa fa-plus paginationArrow" data-toggle="modal" data-target="#myModal"></i>New Kategorie</button>-->
+                        <button type="button" class="btn btn-info btn-lg themeButtonMin" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus paginationArrow" data-toggle="modal" data-target="#myModal"></i>New Kategorie</button>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
+
+
+
 
             <?php
 
@@ -118,8 +137,35 @@ $Service = new \bll\service\DBService();
             }
             ?>
         </div>
+
+
+        <!-- Modal new Category -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <form action="insertCategory.php" method="post">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Name der Kategorie</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input name="title">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+                            <button type="submit" name="submit" class="btn btn-primary themeButtonMin">Speichern</button>
+                        </div>
+                    </div>
+                </form>
+
+
+
+            </div>
+        </div>
     </body>
 
     <script src="themes/default/js/forum_home.js"></script>
-    <script src="themes/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </html>
